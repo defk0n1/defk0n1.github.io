@@ -434,8 +434,9 @@ footer{
       <a href="mailto:ghassen.zriga@supcom.tn">ghassen.zriga@supcom.tn</a>
       <a href="https://www.linkedin.com/in/ghassen-zriga/">LinkedIn</a>
       <a href="https://github.com/defk0n1">GitHub</a>
-      <!-- Drop your PDF in the repo root as GhassenZriga_CV.pdf for this to work -->
-      <a href="GhassenZriga_CV.pdf" data-fr="Télécharger le CV">Download CV</a>
+      <!-- Two CVs in the repo root: GhassenZriga_CV_EN.pdf and GhassenZriga_CV_FR.pdf.
+           The link follows the selected language. -->
+      <a href="GhassenZriga_CV_EN.pdf" data-fr-href="GhassenZriga_CV_FR.pdf" data-fr="Télécharger le CV">Download CV</a>
     </p>
     </div>
 
@@ -1024,6 +1025,7 @@ footer{
 <script>
 (function () {
   var nodes = Array.prototype.slice.call(document.querySelectorAll('[data-fr]'));
+  var links = Array.prototype.slice.call(document.querySelectorAll('[data-fr-href]'));
   var buttons = Array.prototype.slice.call(document.querySelectorAll('.langbar button'));
   var titles = {
     en: "Ghassen Zriga — AI & ML Engineer",
@@ -1036,11 +1038,16 @@ footer{
 
   // capture the English source before anything is swapped
   nodes.forEach(function (n) { n.setAttribute('data-en', n.innerHTML); });
+  links.forEach(function (a) { a.setAttribute('data-en-href', a.getAttribute('href')); });
 
   function apply(lang) {
     nodes.forEach(function (n) {
       var v = n.getAttribute('data-' + lang);
       if (v !== null) n.innerHTML = v;
+    });
+    links.forEach(function (a) {
+      var h = a.getAttribute('data-' + lang + '-href');
+      if (h) a.setAttribute('href', h);
     });
     document.documentElement.lang = lang;
     document.title = titles[lang];
