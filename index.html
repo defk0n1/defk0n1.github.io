@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ghassen Zriga — AI &amp; ML Engineer</title>
+<meta name="description" content="Ghassen Zriga — final-year ICT engineering student at SUP'COM, research intern at CRIL (Université d'Artois). LLM systems, reinforcement learning, and full-stack engineering.">
+<meta property="og:title" content="Ghassen Zriga — AI &amp; ML Engineer">
+<meta property="og:description" content="LLM systems, reinforcement learning, and the pipelines that keep them running.">
+<meta property="og:type" content="profile">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23A3195B'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='19' fill='%23F5F5F2' text-anchor='middle'%3EG%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,400..700,0..100,0..1&family=Instrument+Sans:wght@400..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ── tokens ───────────────────────────────────────────────────────── */
+:root{
+  --paper:#F5F5F2;
+  --paper-2:#EDEDE8;
+  --ink:#16181C;
+  --ink-2:#5A5F68;
+  --rule:#D8D8D1;
+  --accent:#A3195B;
+  --accent-2:#7C1244;
+
+  --display:"Fraunces","Iowan Old Style",Georgia,serif;
+  --body:"Instrument Sans","Helvetica Neue",Arial,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+
+  --measure:52rem;
+  --gutter:8.5rem;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --paper:#131417;
+    --paper-2:#1B1D21;
+    --ink:#EDEDE7;
+    --ink-2:#9AA0A9;
+    --rule:#2E3137;
+    --accent:#F06AA8;
+    --accent-2:#F79AC5;
+  }
+}
+
+/* ── base ─────────────────────────────────────────────────────────── */
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:3rem;-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--body);
+  font-size:clamp(15px,.55vw + 13.6px,17px);
+  line-height:1.62;
+  font-feature-settings:"kern","liga";
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:var(--measure);margin:0 auto;padding:0 1.5rem}
+
+a{color:inherit;text-decoration:none}
+a:focus-visible,summary:focus-visible{
+  outline:2px solid var(--accent);
+  outline-offset:3px;
+  border-radius:2px;
+}
+
+/* ── typographic roles ────────────────────────────────────────────── */
+.eyebrow{
+  font-family:var(--mono);
+  font-size:.68rem;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--ink-2);
+  font-weight:500;
+}
+.name{
+  font-family:var(--display);
+  font-variation-settings:"opsz" 144,"SOFT" 0,"WONK" 1;
+  font-weight:560;
+  font-size:clamp(2.7rem,8.5vw,4.75rem);
+  line-height:.94;
+  letter-spacing:-.022em;
+  margin:.55rem 0 0;
+}
+.lede{
+  font-size:clamp(1.03rem,.5vw + .93rem,1.2rem);
+  line-height:1.55;
+  max-width:34em;
+  margin:1.35rem 0 0;
+  color:var(--ink);
+  text-wrap:pretty;
+}
+.lede em{font-style:normal;color:var(--accent);font-weight:600}
+
+/* ── hero ─────────────────────────────────────────────────────────── */
+.hero{padding:clamp(3.5rem,9vw,6.5rem) 0 0}
+.chan{
+  display:flex;flex-wrap:wrap;gap:.4rem 1.4rem;
+  margin-top:1.6rem;
+  font-family:var(--mono);font-size:.78rem;
+}
+.chan a{border-bottom:1px solid var(--rule);padding-bottom:1px;transition:color .18s,border-color .18s}
+.chan a:hover{color:var(--accent);border-color:var(--accent)}
+
+/* ── the index (signature) ────────────────────────────────────────── */
+.index{
+  margin:clamp(3rem,7vw,4.75rem) 0 0;
+  border-top:1px solid var(--rule);
+  padding-top:.85rem;
+}
+.index-label{margin-bottom:.9rem}
+.idx{display:block;padding:.42rem 0;transition:color .18s}
+.idx-row{display:flex;align-items:baseline;gap:.55rem}
+.idx-title{
+  font-family:var(--display);
+  font-variation-settings:"opsz" 24,"SOFT" 0,"WONK" 1;
+  font-weight:520;
+  font-size:1.14rem;
+  letter-spacing:-.008em;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.idx-lead{
+  flex:1 1 auto;
+  min-width:1.5rem;
+  border-bottom:1.5px dotted var(--rule);
+  transform:translateY(-.32em);
+  transition:border-color .18s;
+}
+.idx-year{
+  font-family:var(--mono);
+  font-size:.74rem;
+  color:var(--ink-2);
+  white-space:nowrap;
+  transition:color .18s;
+}
+.idx-org{
+  font-size:.84rem;
+  color:var(--ink-2);
+  margin-top:.05rem;
+}
+.idx:hover .idx-title,.idx:focus-visible .idx-title{color:var(--accent)}
+.idx:hover .idx-lead{border-color:var(--accent)}
+.idx:hover .idx-year{color:var(--accent)}
+
+/* ── sections ─────────────────────────────────────────────────────── */
+section{padding:clamp(3.2rem,7vw,5rem) 0 0}
+.sec-head{
+  display:flex;align-items:baseline;gap:1rem;
+  border-bottom:1px solid var(--ink);
+  padding-bottom:.5rem;
+  margin-bottom:2.2rem;
+}
+.sec-head h2{
+  font-family:var(--mono);
+  font-size:.7rem;
+  letter-spacing:.17em;
+  text-transform:uppercase;
+  font-weight:500;
+  margin:0;
+}
+.sec-count{
+  font-family:var(--mono);font-size:.7rem;color:var(--ink-2);margin-left:auto;
+}
+
+/* entries with a year gutter */
+.entry{
+  display:grid;
+  grid-template-columns:var(--gutter) 1fr;
+  gap:0 1.75rem;
+  padding-bottom:2.5rem;
+}
+.entry:last-child{padding-bottom:.5rem}
+.entry-when{
+  font-family:var(--mono);
+  font-size:.72rem;
+  color:var(--ink-2);
+  line-height:1.5;
+  padding-top:.5rem;
+}
+.entry-where{display:block;margin-top:.3rem}
+.entry h3{
+  font-family:var(--display);
+  font-variation-settings:"opsz" 40,"SOFT" 0,"WONK" 1;
+  font-weight:560;
+  font-size:1.42rem;
+  line-height:1.2;
+  letter-spacing:-.014em;
+  margin:0;
+}
+.entry .role{
+  font-size:.9rem;
+  color:var(--ink-2);
+  margin:.2rem 0 .8rem;
+}
+.entry p{margin:0 0 .7rem;text-wrap:pretty}
+.entry ul{margin:0 0 .85rem;padding-left:1.05rem}
+.entry li{margin-bottom:.45rem;text-wrap:pretty}
+.entry li::marker{color:var(--accent)}
+
+/* portrait */
+.hero-main{display:flex;gap:2.2rem;align-items:flex-start}
+.hero-text{flex:1 1 auto;min-width:0}
+.portrait{
+  position:relative;
+  width:136px;
+  aspect-ratio:1;
+  margin:.55rem 0 0;
+  flex:0 0 auto;
+}
+.portrait-ph{
+  position:absolute;inset:0;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.25rem;
+  border:1px dashed var(--rule);
+  border-radius:3px;
+  background:var(--paper-2);
+  font-family:var(--mono);font-size:.55rem;letter-spacing:.09em;
+  color:var(--ink-2);text-align:center;line-height:1.4;
+  padding:.4rem;
+}
+.portrait img{
+  position:absolute;inset:0;
+  width:100%;height:100%;
+  object-fit:cover;
+  border:1px solid var(--rule);
+  border-radius:3px;
+}
+
+/* language toggle */
+.topbar{
+  display:flex;align-items:flex-start;justify-content:space-between;
+  gap:1rem;flex-wrap:wrap;
+}
+.langbar{
+  display:flex;align-items:center;gap:.35rem;
+  font-family:var(--mono);font-size:.7rem;
+  color:var(--ink-2);flex-shrink:0;
+}
+.langbar button{
+  font:inherit;color:var(--ink-2);
+  background:none;border:0;padding:.1rem .15rem;
+  cursor:pointer;letter-spacing:.08em;
+  border-bottom:1px solid transparent;
+}
+.langbar button:hover{color:var(--accent)}
+.langbar button.on{color:var(--accent);border-bottom-color:var(--accent)}
+.langbar button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* visual slots: screenshots + schematics */
+.shots{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:.7rem;
+  margin:1.1rem 0 .3rem;
+}
+figure{margin:0}
+.shots img{
+  display:block;width:100%;height:auto;
+  border:1px solid var(--rule);
+  border-radius:3px;
+  background:var(--paper-2);
+}
+figcaption{
+  font-family:var(--mono);font-size:.66rem;color:var(--ink-2);
+  margin-top:.4rem;line-height:1.4;
+}
+.schematic{
+  margin:1.2rem 0 .4rem;
+  padding:1.1rem 0 .2rem;
+  border-top:1px solid var(--rule);
+  border-bottom:1px solid var(--rule);
+}
+.schematic svg{display:block;width:100%;height:auto;overflow:visible}
+.sch-box{fill:var(--paper-2);stroke:var(--rule);stroke-width:1}
+.sch-box-out{fill:none;stroke:var(--accent);stroke-width:1.4}
+.sch-name{fill:var(--ink);font-family:var(--body);font-size:12px;font-weight:600}
+.sch-sub{fill:var(--ink-2);font-family:var(--mono);font-size:8.5px;letter-spacing:.04em}
+.sch-accent{fill:var(--accent);font-family:var(--body);font-size:12px;font-weight:600}
+.sch-wire{fill:none;stroke:var(--rule);stroke-width:1.2}
+.sch-wire-hot{fill:none;stroke:var(--accent);stroke-width:1.4}
+.sch-tag{fill:var(--ink-2);font-family:var(--mono);font-size:8px;letter-spacing:.1em;text-transform:uppercase}
+
+.award{
+  display:inline-block;
+  font-family:var(--mono);
+  font-size:.68rem;
+  letter-spacing:.06em;
+  color:var(--accent);
+  font-weight:500;
+  margin:.35rem 0 .1rem;
+}
+.now{
+  display:inline-block;
+  font-family:var(--mono);
+  font-size:.62rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--accent);
+  border:1px solid var(--accent);
+  border-radius:999px;
+  padding:.1rem .45rem;
+  vertical-align:.22em;
+  margin-left:.5rem;
+}
+
+/* keyword tokens */
+.tokens{
+  display:flex;flex-wrap:wrap;gap:.3rem .5rem;
+  font-family:var(--mono);font-size:.71rem;color:var(--ink-2);
+  margin-top:.15rem;
+}
+.tokens span{
+  background:var(--paper-2);
+  border-radius:2px;
+  padding:.12rem .42rem;
+  white-space:nowrap;
+}
+
+/* project links */
+.plinks{display:flex;flex-wrap:wrap;gap:1rem;margin-top:.8rem;font-family:var(--mono);font-size:.73rem}
+.plinks a{color:var(--accent);border-bottom:1px solid currentColor;padding-bottom:1px}
+.plinks a:hover{color:var(--accent-2)}
+
+.group-label{
+  grid-column:1 / -1;
+  font-family:var(--mono);font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--ink-2);
+  border-bottom:1px solid var(--rule);
+  padding-bottom:.4rem;margin-bottom:1.8rem;
+}
+.projects{display:grid;grid-template-columns:1fr}
+
+/* skills */
+.skill{
+  display:grid;grid-template-columns:var(--gutter) 1fr;
+  gap:0 1.75rem;padding:.85rem 0;
+  border-bottom:1px solid var(--rule);
+}
+.skill:last-of-type{border-bottom:0}
+.skill dt{
+  font-family:var(--mono);font-size:.72rem;color:var(--ink-2);
+  letter-spacing:.04em;padding-top:.16rem;
+}
+.skill dd{margin:0;display:flex;flex-wrap:wrap;gap:.32rem .5rem;font-size:.87rem}
+.skill dd span{background:var(--paper-2);border-radius:2px;padding:.12rem .45rem;white-space:nowrap}
+
+/* footer */
+footer{
+  margin-top:clamp(3.5rem,8vw,5.5rem);
+  border-top:1px solid var(--ink);
+  padding:2.2rem 0 3.5rem;
+}
+.foot-line{
+  font-family:var(--display);
+  font-variation-settings:"opsz" 60,"SOFT" 0,"WONK" 1;
+  font-weight:540;
+  font-size:clamp(1.5rem,4vw,2.1rem);
+  line-height:1.15;
+  letter-spacing:-.015em;
+  margin:0 0 1.3rem;
+}
+.foot-line a{color:var(--accent);border-bottom:2px solid var(--rule);transition:border-color .18s}
+.foot-line a:hover{border-color:var(--accent)}
+.foot-meta{
+  display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;
+  font-family:var(--mono);font-size:.75rem;color:var(--ink-2);
+}
+.foot-meta a{border-bottom:1px solid var(--rule)}
+.foot-meta a:hover{color:var(--accent);border-color:var(--accent)}
+
+/* ── load sequence ────────────────────────────────────────────────── */
+@keyframes rise{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:none}}
+.rise{animation:rise .62s cubic-bezier(.22,.7,.3,1) backwards}
+.rise:nth-child(1){animation-delay:.02s}
+.rise:nth-child(2){animation-delay:.07s}
+.rise:nth-child(3){animation-delay:.12s}
+.rise:nth-child(4){animation-delay:.17s}
+.rise:nth-child(5){animation-delay:.22s}
+.rise:nth-child(6){animation-delay:.27s}
+.rise:nth-child(7){animation-delay:.32s}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .rise{animation:none}
+  *{transition-duration:.01ms !important}
+}
+
+/* ── responsive ───────────────────────────────────────────────────── */
+@media (max-width:640px){
+  .hero-main{flex-direction:column-reverse;align-items:flex-start;gap:1.3rem}
+  .portrait{width:92px;margin-top:0}
+  :root{--gutter:1fr}
+  .entry,.skill{grid-template-columns:1fr;gap:0}
+  .entry-when{padding-top:0;margin-bottom:.35rem}
+  .entry-where{display:inline;margin-top:0}
+  .entry-where::before{content:" · "}
+  .skill{padding:.9rem 0}
+  .skill dt{margin-bottom:.45rem;padding-top:0}
+  .idx-lead{display:none}
+  .idx-row{flex-wrap:wrap;gap:.3rem .6rem}
+  .idx-title{white-space:normal}
+}
+@media print{
+  body{background:#fff;color:#000;font-size:10.5pt}
+  .index,.now{display:none}
+  a{color:#000}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+<!-- ══ HERO ══════════════════════════════════════════════════════════ -->
+<header class="hero">
+  <div class="topbar rise">
+    <p class="eyebrow" data-fr="Ingénieur IA &amp; ML · Lens, France">AI &amp; ML Engineer · Lens, France</p>
+    <div class="langbar" role="group" aria-label="Language / Langue">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <span aria-hidden="true">/</span>
+      <button type="button" data-lang="fr" aria-pressed="false">FR</button>
+    </div>
+  </div>
+  <div class="hero-main">
+    <div class="hero-text">
+    <h1 class="name rise">Ghassen Zriga</h1>
+    <p class="lede rise" data-fr="Élève-ingénieur en dernière année à SUP'COM, actuellement stagiaire de recherche au <em>CRIL, Université d'Artois</em>. Je conçois des systèmes à base de LLM et d'apprentissage par renforcement — et les pipelines qui les font tourner ailleurs que dans un notebook.">
+      Final-year ICT engineering student at SUP'COM, currently a research intern at
+      <em>CRIL, Université d'Artois</em>. I build LLM and reinforcement-learning
+      systems — and the pipelines that keep them running outside a notebook.
+    </p>
+    <p class="chan rise">
+      <a href="mailto:ghassen.zriga@supcom.tn">ghassen.zriga@supcom.tn</a>
+      <a href="https://www.linkedin.com/in/ghassen-zriga/">LinkedIn</a>
+      <a href="https://github.com/defk0n1">GitHub</a>
+      <!-- Drop your PDF in the repo root as GhassenZriga_CV.pdf for this to work -->
+      <a href="GhassenZriga_CV.pdf" data-fr="Télécharger le CV">Download CV</a>
+    </p>
+    </div>
+
+    <!-- PORTRAIT — save a square photo as img/ghassen.jpg and it replaces
+         the dashed placeholder automatically. No other edit needed. -->
+    <figure class="portrait rise">
+      <div class="portrait-ph" aria-hidden="true">
+        <span>PORTRAIT</span>
+        <span>img/ghassen.jpg</span>
+        <span>800 × 800</span>
+      </div>
+      <img src="img/ghassen.jpg" alt="Ghassen Zriga" onerror="this.remove()">
+    </figure>
+  </div>
+
+  <!-- the index: everything at a glance, in reverse chronological order -->
+  <nav class="index" aria-label="Selected work">
+    <p class="eyebrow index-label" data-fr="Travaux sélectionnés">Selected work</p>
+
+    <a class="idx" href="#cril">
+      <span class="idx-row">
+        <span class="idx-title" data-fr="Raisonnement neuro-symbolique pour LLM">Neuro-symbolic reasoning for LLMs</span>
+        <span class="idx-lead"></span>
+        <span class="idx-year">2026</span>
+      </span>
+      <span class="idx-org">CRIL, Université d'Artois</span>
+    </a>
+
+    <a class="idx" href="#sagemcom">
+      <span class="idx-row">
+        <span class="idx-title" data-fr="GraphRAG pour l'ingénierie des exigences">GraphRAG for requirements engineering</span>
+        <span class="idx-lead"></span>
+        <span class="idx-year">2025—26</span>
+      </span>
+      <span class="idx-org">Sagemcom</span>
+    </a>
+
+    <a class="idx" href="#huawei">
+      <span class="idx-row">
+        <span class="idx-title" data-fr="Agent RL pour le déploiement de réseaux LTE">RL agent for LTE network deployment</span>
+        <span class="idx-lead"></span>
+        <span class="idx-year">2025</span>
+      </span>
+      <span class="idx-org">Huawei Technologies</span>
+    </a>
+
+    <a class="idx" href="#email">
+      <span class="idx-row">
+        <span class="idx-title" data-fr="MailMate — assistant email multi-agent">MailMate — multi-agent email assistant</span>
+        <span class="idx-lead"></span>
+        <span class="idx-year">2025</span>
+      </span>
+      <span class="idx-org" data-fr="1re place · Sofrecom AI Agent Hackathon">1st place · Sofrecom AI Agent Hackathon</span>
+    </a>
+
+    <a class="idx" href="#irrigation">
+      <span class="idx-row">
+        <span class="idx-title" data-fr="Système IoT de prédiction d'irrigation">IoT irrigation prediction system</span>
+        <span class="idx-lead"></span>
+        <span class="idx-year">2025</span>
+      </span>
+      <span class="idx-org" data-fr="2e place · Wiempower 2.0">2nd place · Wiempower 2.0</span>
+    </a>
+
+    <a class="idx" href="#advisor">
+      <span class="idx-row">
+        <span class="idx-title" data-fr="Conseiller financier LLM en temps réel">Real-time LLM financial advisor</span>
+        <span class="idx-lead"></span>
+        <span class="idx-year">2025</span>
+      </span>
+      <span class="idx-org" data-fr="Projet personnel">Personal project</span>
+    </a>
+
+    <a class="idx" href="#retina">
+      <span class="idx-row">
+        <span class="idx-title" data-fr="Classification de la rétinopathie diabétique">Diabetic retinopathy classification</span>
+        <span class="idx-lead"></span>
+        <span class="idx-year">2025</span>
+      </span>
+      <span class="idx-org" data-fr="Projet académique">Academic project</span>
+    </a>
+  </nav>
+</header>
+
+<!-- ══ EXPERIENCE ════════════════════════════════════════════════════ -->
+<section id="experience">
+  <div class="sec-head">
+    <h2 data-fr="Expérience">Experience</h2>
+    <span class="sec-count">04</span>
+  </div>
+
+  <article class="entry" id="cril">
+    <div class="entry-when">
+      <span data-fr="Mai 2026 — aujourd’hui">May 2026 — present</span>
+      <span class="entry-where">Lens, France</span>
+    </div>
+    <div>
+      <h3>CRIL — Université d'Artois<span class="now" data-fr="Actuel">Now</span></h3>
+      <p class="role" data-fr="Stagiaire de recherche · Projet de fin d’études (PFE)">Research intern · End-of-studies project (PFE)</p>
+      <ul>
+        <li data-fr="Conception de cadres logiques et neuro-symboliques pour traiter les incohérences de raisonnement des LLM, afin que la décision tienne quand les éléments se contredisent.">Building logical and neuro-symbolic frameworks that handle reasoning inconsistencies in LLMs, so decision-making holds up when the evidence contradicts itself.</li>
+        <li data-fr="Intégration du raisonnement formel dans des architectures existantes pour améliorer la transparence, l'explicabilité et la fidélité des décisions des modèles.">Folding formal reasoning into existing architectures to improve the transparency, explainability and fidelity of model decisions.</li>
+      </ul>
+      <div class="tokens">
+        <span data-fr="IA neuro-symbolique">Neuro-symbolic AI</span><span data-fr="Raisonnement LLM">LLM reasoning</span><span data-fr="Logique formelle">Formal logic</span><span data-fr="Explicabilité">Explainability</span>
+      </div>
+    </div>
+  </article>
+
+  <article class="entry" id="sagemcom">
+    <div class="entry-when">
+      <span data-fr="Oct. 2025 — Févr. 2026">Oct 2025 — Feb 2026</span>
+      <span class="entry-where" data-fr="Tunis, Tunisie">Tunis, Tunisia</span>
+    </div>
+    <div>
+      <h3>Sagemcom</h3>
+      <p class="role" data-fr="Stagiaire NLP / LLM">NLP / LLM intern</p>
+      <ul>
+        <li data-fr="Développement d'un système GraphRAG sur les bases d'exigences Jira/R4J : construction de graphes de connaissances dans Neo4j et reconnaissance d'entités sémantiques pour faire remonter incohérences et doublons.">Built a GraphRAG system over requirement bases in Jira/R4J, constructing knowledge graphs in Neo4j and recognising semantic entities to surface inconsistencies and duplicates.</li>
+        <li data-fr="Mise en production de la détection de doublons, de la classification sémantique, de la reformulation et des métriques de qualité derrière une API REST, avec un tableau de bord permettant aux responsables d'exigences d'agir sur les résultats.">Shipped duplicate detection, semantic classification, reformulation and quality metrics behind a REST API, with a dashboard so requirement owners could act on the results.</li>
+      </ul>
+      <div class="tokens">
+        <span>NLP</span><span>LLM</span><span>GraphRAG</span><span>Neo4j</span><span data-fr="Plongements sémantiques">Semantic embeddings</span><span>Ollama</span><span>LangChain</span><span>NetworkX</span><span>REST API</span>
+      </div>
+      <!-- CONFIRM BEFORE PUBLISHING: is linking internship code OK with Sagemcom?
+      <div class="plinks"><a href="https://github.com/defk0n1/kggen">Code</a></div> -->
+    </div>
+  </article>
+
+  <article class="entry" id="huawei">
+    <div class="entry-when">
+      <span data-fr="Juil. — Août 2025">Jul — Aug 2025</span>
+      <span class="entry-where" data-fr="Tunis, Tunisie">Tunis, Tunisia</span>
+    </div>
+    <div>
+      <h3>Huawei Technologies Tunisia</h3>
+      <p class="role" data-fr="Stagiaire IA">AI intern</p>
+      <ul>
+        <li data-fr="Développement d'un agent d'apprentissage par renforcement qui place et configure des stations de base LTE, dans un environnement Gym sur mesure alimenté par les cartes raster d'élévation et de clutter de la zone de déploiement réelle.">Built a reinforcement-learning agent that places and configures LTE base stations, inside a custom Gym environment driven by elevation and clutter raster maps of the real deployment area.</li>
+        <li data-fr="Implémentation de Proximal Policy Optimization from scratch avec PyTorch, avec des réseaux d'attention sur graphes comme modèles de politique et de valeur.">Implemented Proximal Policy Optimization from scratch in PyTorch, with graph neural networks as the policy and value models.</li>
+        <li data-fr="L'agent choisit les sites d'émission parmi les candidats et règle puissance, azimut, tilt et fréquence selon les préférences couverture/capacité de l'utilisateur.">The agent picks transmitter sites from candidates and tunes power, azimuth, tilt and frequency against user-defined coverage-versus-capacity preferences.</li>
+        <li data-fr="Atteint 70 % de la capacité de la recherche exhaustive tout en réduisant l'inférence de plusieurs heures à quelques millisecondes.">Reached 70% of exhaustive-search capacity while cutting inference from hours to milliseconds.</li>
+      </ul>
+      <div class="schematic">
+        <svg viewBox="0 0 780 232" xmlns="http://www.w3.org/2000/svg" role="img"
+             aria-label="Training loop: clutter raster becomes a k-nearest-neighbour candidate graph, a two-layer graph attention network emits placement and configuration actions, propagation simulation returns RSRP and SINR maps, and the reward drives a PPO update.">
+          <defs>
+            <marker id="ar2" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto">
+              <path d="M0 0 L8 4 L0 8 z" fill="currentColor"/>
+            </marker>
+          </defs>
+
+          <text x="4" y="16" class="sch-tag">Terrain</text>
+          <rect x="4" y="26" width="114" height="42" rx="2" class="sch-box"/>
+          <text x="15" y="46" class="sch-name" data-fr="Raster de clutter">Clutter raster</text>
+          <text x="15" y="58" class="sch-sub">GEOTIFF · RASTERIO</text>
+
+          <path d="M118 47 L 136 47" class="sch-wire" style="color:var(--rule)" marker-end="url(#ar2)"/>
+
+          <rect x="140" y="26" width="122" height="42" rx="2" class="sch-box"/>
+          <text x="151" y="46" class="sch-name" data-fr="Graphe de candidats">Candidate graph</text>
+          <text x="151" y="58" class="sch-sub">k-NN, k=5 · 5 FEATS</text>
+
+          <path d="M262 47 L 280 47" class="sch-wire" style="color:var(--rule)" marker-end="url(#ar2)"/>
+
+          <text x="284" y="16" class="sch-tag">Agent</text>
+          <rect x="284" y="26" width="108" height="42" rx="2" class="sch-box"/>
+          <text x="295" y="46" class="sch-name">GAT ×2</text>
+          <text x="295" y="58" class="sch-sub">POLICY π · VALUE V</text>
+
+          <path d="M392 47 L 410 47" class="sch-wire" style="color:var(--rule)" marker-end="url(#ar2)"/>
+
+          <rect x="414" y="26" width="152" height="42" rx="2" class="sch-box"/>
+          <text x="425" y="46" class="sch-name" data-fr="Actions">Actions</text>
+          <text x="425" y="58" class="sch-sub">PLACE · HEIGHT · TILT · AZIMUTH</text>
+
+          <path d="M566 47 L 584 47" class="sch-wire" style="color:var(--rule)" marker-end="url(#ar2)"/>
+
+          <text x="588" y="16" class="sch-tag">Environment</text>
+          <rect x="588" y="26" width="128" height="42" rx="2" class="sch-box"/>
+          <text x="599" y="46" class="sch-name" data-fr="Propagation">Propagation</text>
+          <text x="599" y="58" class="sch-sub">RSRP + SINR MAPS</text>
+
+          <path d="M652 68 L 652 178 L 520 178" class="sch-wire" style="color:var(--rule)" marker-end="url(#ar2)"/>
+
+          <rect x="288" y="152" width="232" height="52" rx="2" class="sch-box-out"/>
+          <text x="300" y="172" class="sch-accent" data-fr="Récompense">Reward</text>
+          <text x="300" y="185" class="sch-sub">2 · COVERAGE (RSRP &gt; −95 dBm)</text>
+          <text x="300" y="197" class="sch-sub">+ SINR &gt; 5 dB − 0.2 · N SITES</text>
+
+          <path d="M338 152 L 338 70" class="sch-wire-hot" style="color:var(--accent)" marker-end="url(#ar2)"/>
+          <text x="346" y="115" class="sch-sub">PPO UPDATE</text>
+        </svg>
+        <figcaption data-fr="Une étape d'entraînement. L'agent ne voit jamais d'image de carte — le terrain est encodé comme un graphe de sites candidats, ce qui justifie le choix de l'attention sur graphe.">One training step. The agent never sees a map image — the terrain is encoded as a graph of candidate sites, which is why graph attention is the right model for it.</figcaption>
+      </div>
+
+      <div class="tokens">
+        <span>PyTorch</span><span>PyTorch Geometric</span><span>PPO</span><span>GNN</span><span>Gym</span><span>Rasterio</span>
+      </div>
+      <!-- CONFIRM BEFORE PUBLISHING: is linking internship code OK with Huawei?
+      <div class="plinks"><a href="https://github.com/defk0n1/rl-site-planner">Code</a></div> -->
+    </div>
+  </article>
+
+  <article class="entry" id="avempace">
+    <div class="entry-when">
+      <span data-fr="Juil. — Août 2024">Jul — Aug 2024</span>
+      <span class="entry-where" data-fr="Nabeul, Tunisie">Nabeul, Tunisia</span>
+    </div>
+    <div>
+      <h3>Avempace Wireless</h3>
+      <p class="role" data-fr="Stagiaire développement">Software intern</p>
+      <ul>
+        <li data-fr="Développement d'un module éditeur d'invitations pour une application web de planification d'événements, donnant à chaque événement son invitation personnalisable, et intégration dans le frontend et le backend existants.">Built an invitation editor for an event-planning web app, giving every event its own customisable invitation, and integrated it across the existing frontend and backend.</li>
+      </ul>
+      <div class="tokens">
+        <span>Vue</span><span>Node.js</span><span>Express</span><span>PostgreSQL</span><span>FabricJS</span>
+      </div>
+      <div class="plinks"><a href="https://github.com/defk0n1/badge-editor-test" data-fr="Module éditeur">Editor module</a></div>
+    </div>
+  </article>
+</section>
+
+<!-- ══ PROJECTS ══════════════════════════════════════════════════════ -->
+<section id="projects">
+  <div class="sec-head">
+    <h2 data-fr="Projets">Projects</h2>
+    <span class="sec-count">08</span>
+  </div>
+
+  <div class="projects">
+    <p class="group-label" data-fr="Systèmes de machine learning &amp; IA">Machine learning &amp; AI systems</p>
+
+    <article class="entry" id="advisor">
+      <div class="entry-when" data-fr="2025 — aujourd’hui">2025 — present</div>
+      <div>
+        <h3>LLM Financial Advisor</h3>
+        <p data-fr="Un chatbot conseiller financier bâti sur un Llama 3 8B fine-tuné, avec un pipeline temps réel qui diffuse l'actualité financière vers une base vectorielle pour la recherche. Découpé en trois pipelines MLOps — features, entraînement, inférence — et servi depuis une Azure Container Instance.">A financial-advisor chatbot built on a fine-tuned Llama 3 8B, with a real-time pipeline streaming financial news into a vector store for retrieval. Split into three MLOps pipelines — feature, training, inference — and served from an Azure Container Instance.</p>
+        <div class="tokens">
+          <span>Unsloth</span><span>Bytewax</span><span>Qdrant</span><span>LangChain</span><span>Weights &amp; Biases</span><span>Azure</span><span>Alpaca API</span>
+        </div>
+        <!-- <div class="plinks"><a href="REPO_URL">Code</a><a href="DEMO_URL">Live demo</a></div> -->
+      </div>
+    </article>
+
+    <article class="entry" id="email">
+      <div class="entry-when">2025</div>
+      <div>
+        <h3>MailMate AI</h3>
+        <p class="award" data-fr="1re place — Sofrecom AI Agent Hackathon">1st place — Sofrecom AI Agent Hackathon</p>
+        <p class="role" data-fr="Assistant email multi-agent · équipe de six">Multi-agent email assistant · team of six</p>
+        <p data-fr="Un système multi-agent qui lit une boîte mail et agit dessus : résumés, détection du sentiment et de l'urgence, extraction de tâches avec priorités, propositions de réunion à partir du contexte, et traduction dans n'importe quelle langue. Les pièces jointes sont traitées en multimodal — Excel et CSV via Pandas, PDF via PyMuPDF, images par OCR — et Gmail, Agenda et To-Do sont branchés derrière un OAuth automatique avec rafraîchissement de jeton.">A multi-agent system that reads and acts on an inbox: summaries, sentiment and urgency detection, task extraction with priorities, meeting suggestions from email context, and translation into any language. Attachments are processed multimodally — Excel and CSV through Pandas, PDFs through PyMuPDF, images through OCR — and Gmail, Calendar and To-Do are wired in behind automatic OAuth with token refresh.</p>
+        <div class="schematic">
+          <svg viewBox="0 0 780 192" xmlns="http://www.w3.org/2000/svg" role="img"
+               aria-label="Agent pipeline: a request or a Gmail push notification enters a task decomposer, an orchestrator executes the plan against a tool belt, an email specialist analyses the result, and a validator either returns the answer or sends it back for replanning.">
+            <defs>
+              <marker id="ar3" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto">
+                <path d="M0 0 L8 4 L0 8 z" fill="currentColor"/>
+              </marker>
+            </defs>
+
+            <rect x="4" y="24" width="140" height="36" rx="2" class="sch-box"/>
+            <text x="15" y="42" class="sch-name" data-fr="Langage naturel">Natural language</text>
+            <text x="15" y="54" class="sch-sub">USER REQUEST</text>
+
+            <rect x="4" y="68" width="140" height="36" rx="2" class="sch-box"/>
+            <text x="15" y="86" class="sch-name">Gmail push</text>
+            <text x="15" y="98" class="sch-sub">PUB/SUB TRIGGER</text>
+
+            <g class="sch-wire" style="color:var(--rule)">
+              <path d="M144 42 C 160 42 160 49 174 49" marker-end="url(#ar3)"/>
+              <path d="M144 86 C 160 86 160 49 174 49" marker-end="url(#ar3)"/>
+            </g>
+
+            <rect x="178" y="27" width="122" height="44" rx="2" class="sch-box"/>
+            <text x="189" y="47" class="sch-name" data-fr="Décomposeur de tâches">Task Decomposer</text>
+            <text x="189" y="59" class="sch-sub">ATOMIC STEPS · JSON</text>
+
+            <path d="M300 49 L 316 49" class="sch-wire" style="color:var(--rule)" marker-end="url(#ar3)"/>
+
+            <rect x="320" y="27" width="116" height="44" rx="2" class="sch-box"/>
+            <text x="331" y="47" class="sch-name" data-fr="Orchestrateur">Orchestrator</text>
+            <text x="331" y="59" class="sch-sub">EXECUTES PLAN</text>
+
+            <path d="M436 49 L 452 49" class="sch-wire" style="color:var(--rule)" marker-end="url(#ar3)"/>
+
+            <rect x="456" y="27" width="140" height="44" rx="2" class="sch-box"/>
+            <text x="467" y="47" class="sch-name" data-fr="Spécialiste email">Email Specialist</text>
+            <text x="467" y="59" class="sch-sub">ANALYSE · TRANSLATE</text>
+
+            <path d="M596 49 L 612 49" class="sch-wire" style="color:var(--rule)" marker-end="url(#ar3)"/>
+
+            <rect x="616" y="27" width="110" height="44" rx="2" class="sch-box"/>
+            <text x="627" y="47" class="sch-name" data-fr="Validateur">Validator</text>
+            <text x="627" y="59" class="sch-sub">JSON CHECK</text>
+
+            <path d="M671 27 L 671 12 L 378 12 L 378 27" class="sch-wire" style="color:var(--rule)"
+                  stroke-dasharray="3 4" marker-end="url(#ar3)"/>
+            <text x="470" y="9" class="sch-sub">INCOMPLETE — REPLAN</text>
+
+            <path d="M378 71 L 378 128" class="sch-wire" style="color:var(--rule)"
+                  stroke-dasharray="3 4" marker-end="url(#ar3)"/>
+            <text x="386" y="104" class="sch-sub">CALLS · RESULTS</text>
+
+            <rect x="320" y="132" width="276" height="48" rx="2" class="sch-box"/>
+            <text x="332" y="152" class="sch-name" data-fr="Boîte à outils">Tool belt</text>
+            <text x="332" y="165" class="sch-sub">GMAIL ×4 · CALENDAR ×5</text>
+            <text x="332" y="176" class="sch-sub">ATTACHMENTS ×3 — PANDAS · PYMUPDF · OCR</text>
+
+            <path d="M671 71 L 671 128" class="sch-wire-hot" style="color:var(--accent)" marker-end="url(#ar3)"/>
+
+            <rect x="616" y="132" width="132" height="48" rx="2" class="sch-box-out"/>
+            <text x="628" y="154" class="sch-accent" data-fr="Réponse">Response</text>
+            <text x="628" y="167" class="sch-sub">GROUNDED ANSWER</text>
+          </svg>
+          <figcaption data-fr="Le validateur porte tout : un plan qui échoue au contrôle de complétude repart vers l'orchestrateur au lieu de sortir vers l'utilisateur.">The validator is the load-bearing part: a plan that fails its completeness check goes back to the orchestrator rather than out to the user.</figcaption>
+        </div>
+
+        <div class="tokens">
+          <span>FastAPI</span><span>Gemini 1.5 Flash/Pro</span><span>Gmail API</span><span>Pub/Sub</span><span>CrewAI</span><span>Pandas</span><span>PyMuPDF</span><span>Pytesseract</span><span>React</span><span>TypeScript</span>
+        </div>
+        <div class="plinks"><a href="https://github.com/defk0n1/sofrecom-hackathon">Code</a></div>
+      </div>
+    </article>
+
+    <article class="entry" id="retina">
+      <div class="entry-when">2025</div>
+      <div>
+        <h3>Diabetic Retinopathy Classification</h3>
+        <p data-fr="Un pipeline de deep learning pour la classification d'images de fond d'œil. Étude comparative d'EfficientNet, DenseNet, ResNet et ViT, puis conception de DRCCT — un compact convolutional transformer hybride — en intégrant les métadonnées patient et diagnostic directement dans l'espace latent de l'image.">A deep-learning pipeline for grading retinal fundus images. Benchmarked EfficientNet, DenseNet, ResNet and ViT against each other, then built DRCCT — a hybrid compact convolutional transformer — and folded patient and diagnostic metadata directly into the image latent space.</p>
+        <div class="tokens">
+          <span>PyTorch</span><span>Vision Transformer</span><span>CNN</span><span>DRCCT</span><span data-fr="Imagerie médicale">Medical imaging</span>
+        </div>
+        <!-- <div class="plinks"><a href="REPO_URL">Code</a></div> -->
+      </div>
+    </article>
+
+    <article class="entry" id="irrigation">
+      <div class="entry-when">2025</div>
+      <div>
+        <h3>IoT Irrigation Prediction System</h3>
+        <p class="award" data-fr="2e place — Wiempower 2.0">2nd place — Wiempower 2.0</p>
+        <p class="role" data-fr="Deux services : un simulateur de passerelle et le système de supervision">Two services: a gateway simulator and the monitoring system</p>
+        <p data-fr="Une chaîne complète pour l'agriculture de précision. Une passerelle Raspberry Pi simulée émule le matériel de terrain — sondes NPK sur Modbus RTU/RS485, capteurs de température DS18B20 en 1-Wire, jauges à ultrasons pour la citerne — et publie sur des topics MQTT consommés par Node-RED. Le système principal ingère ce flux, exécute un modèle de machine learning pour décider de l'actionnement des pompes, suit les niveaux d'eau et l'équilibre nutritif, et expose le tout dans un tableau de bord Streamlit. Chaque service est dockerisé derrière un unique fichier compose.">End-to-end precision-agriculture stack. A simulated Raspberry Pi gateway emulates real field hardware — NPK soil-nutrient probes over Modbus RTU/RS485, DS18B20 one-wire temperature sensors, ultrasonic water-tank gauges — and publishes to MQTT topics that Node-RED consumes. The main system ingests that stream, runs a machine-learning model to decide when to actuate the pumps, tracks reservoir levels and nutrient balance, and surfaces it all through a Streamlit dashboard. Every service is dockerised behind a single compose file.</p>
+        <div class="schematic">
+          <svg viewBox="0 0 760 196" xmlns="http://www.w3.org/2000/svg" role="img"
+               aria-label="Data path: NPK, temperature and water-level sensors publish over MQTT to Node-RED, feeding a machine-learning model that actuates the pump.">
+            <defs>
+              <marker id="ar" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto">
+                <path d="M0 0 L8 4 L0 8 z" fill="currentColor"/>
+              </marker>
+            </defs>
+
+            <text x="4" y="10" class="sch-tag">Field hardware</text>
+            <rect x="4" y="20" width="140" height="38" rx="2" class="sch-box"/>
+            <text x="16" y="38" class="sch-name" data-fr="Sonde NPK">NPK probe</text>
+            <text x="16" y="50" class="sch-sub">MODBUS RTU / RS485</text>
+
+            <rect x="4" y="72" width="140" height="38" rx="2" class="sch-box"/>
+            <text x="16" y="90" class="sch-name" data-fr="Température">Temperature</text>
+            <text x="16" y="102" class="sch-sub">DS18B20 · 1-WIRE</text>
+
+            <rect x="4" y="124" width="140" height="38" rx="2" class="sch-box"/>
+            <text x="16" y="142" class="sch-name" data-fr="Niveau d’eau">Water level</text>
+            <text x="16" y="154" class="sch-sub">ULTRASONIC</text>
+
+            <g class="sch-wire" style="color:var(--rule)">
+              <path d="M144 39 C 178 39 178 91 206 91" marker-end="url(#ar)"/>
+              <path d="M144 91 L 206 91" marker-end="url(#ar)"/>
+              <path d="M144 143 C 178 143 178 91 206 91" marker-end="url(#ar)"/>
+            </g>
+
+            <text x="212" y="62" class="sch-tag">Gateway</text>
+            <rect x="212" y="72" width="118" height="38" rx="2" class="sch-box"/>
+            <text x="224" y="90" class="sch-name" data-fr="Broker MQTT">MQTT broker</text>
+            <text x="224" y="102" class="sch-sub">MOSQUITTO</text>
+
+            <path d="M330 91 L 372 91" class="sch-wire" style="color:var(--rule)" marker-end="url(#ar)"/>
+
+            <rect x="378" y="72" width="112" height="38" rx="2" class="sch-box"/>
+            <text x="390" y="90" class="sch-name">Node-RED</text>
+            <text x="390" y="102" class="sch-sub">ROUTING · VIZ</text>
+
+            <path d="M490 91 L 532 91" class="sch-wire" style="color:var(--rule)" marker-end="url(#ar)"/>
+
+            <text x="538" y="62" class="sch-tag">Decision</text>
+            <rect x="538" y="72" width="104" height="38" rx="2" class="sch-box"/>
+            <text x="550" y="90" class="sch-name">XGBoost</text>
+            <text x="550" y="102" class="sch-sub">IRRIGATE / HOLD</text>
+
+            <path d="M642 91 L 684 91" class="sch-wire-hot" style="color:var(--accent)" marker-end="url(#ar)"/>
+
+            <rect x="690" y="72" width="66" height="38" rx="2" class="sch-box-out"/>
+            <text x="702" y="90" class="sch-accent" data-fr="Pompe">Pump</text>
+            <text x="702" y="102" class="sch-sub">ACTUATE</text>
+
+            <path d="M723 110 C 723 178 300 186 268 130" class="sch-wire" style="color:var(--rule)"
+                  stroke-dasharray="3 4" marker-end="url(#ar)"/>
+            <text x="430" y="182" class="sch-sub">soil state changes — sensors read it back</text>
+          </svg>
+          <figcaption data-fr="Du capteur à l'actionneur. La boucle se referme : irriguer modifie le sol, que les sondes relisent au cycle suivant.">Sensor-to-actuator path. The loop closes: irrigating changes the soil, which the probes read on the next cycle.</figcaption>
+        </div>
+
+        <!-- SCREENSHOTS — drop files in an /img folder and uncomment
+        <div class="shots">
+          <figure><img src="img/irrigation-dashboard.png" alt="Streamlit dashboard showing soil moisture and NPK readings">
+            <figcaption>Streamlit monitoring dashboard</figcaption></figure>
+          <figure><img src="img/irrigation-nodered.png" alt="Node-RED flow wiring MQTT topics to the model">
+            <figcaption>Node-RED flow</figcaption></figure>
+        </div>
+        -->
+
+        <div class="tokens"><span>Eclipse MQTT</span><span>Node-RED</span><span>Modbus RTU</span><span>XGBoost</span><span>Streamlit</span><span>FastAPI</span><span>Docker Compose</span><span>PostgreSQL</span>
+        </div>
+        <div class="plinks">
+          <a href="https://github.com/defk0n1/WIEMPOWER2" data-fr="Système de supervision">Monitoring system</a>
+          <a href="https://github.com/defk0n1/WIEMPOWER2IOT" data-fr="Simulateur de passerelle">Gateway simulator</a>
+        </div>
+      </div>
+    </article>
+
+    <p class="group-label" data-fr="Produits full-stack">Full-stack products</p>
+
+    <article class="entry" id="smarters">
+      <div class="entry-when">2026</div>
+      <div>
+        <h3>SmartERS</h3>
+        <p class="role" data-fr="Système de secours et de régulation d’ambulances">Emergency response and ambulance dispatch system</p>
+        <p data-fr="Une plateforme de régulation découpée en deux backends : l'un pour l'authentification, la saisie des incidents et la gestion de la flotte d'ambulances, l'autre pour la cartographie, le calcul d'itinéraires et le géocodage via ArcGIS. Un frontend Next.js par-dessus, avec des tableaux de bord selon le rôle : administrateur, opérateur de salle et ambulancier voient chacun le même incident différemment. Authentification JWT avec jetons de rafraîchissement, MongoDB pour la persistance.">A dispatch platform split across two backends: one handling authentication, incident intake and ambulance fleet management, the other handling mapping, routing and geocoding through ArcGIS. A Next.js frontend sits on top with role-based dashboards, so an administrator, a control-room operator and an ambulance driver each get a different view of the same incident. JWT authentication with refresh tokens, MongoDB for persistence.</p>
+        <div class="tokens">
+          <span>Next.js</span><span>Node.js</span><span>MongoDB</span><span>ArcGIS</span><span>JWT</span><span data-fr="Routage géospatial">Geospatial routing</span><span>REST API</span>
+        </div>
+        <div class="plinks"><a href="https://github.com/defk0n1/SmartERS">Code</a></div>
+      </div>
+    </article>
+
+    <article class="entry" id="talentsketch">
+      <div class="entry-when">2025</div>
+      <div>
+        <h3>TalentSketch</h3>
+        <p class="role" data-fr="Générateur de CV par IA">AI-powered résumé builder</p>
+        <p data-fr="Une plateforme de CV qui rédige le contenu des sections via l'API Gemini et génère des lettres de motivation à partir d'un CV existant. Authentification sécurisée et plusieurs modèles au choix.">A résumé platform that drafts section content through the Gemini API and generates cover letters from an existing résumé. Secure authentication and a set of templates to pick from.</p>
+        <div class="tokens">
+          <span>Next.js 14</span><span>MongoDB</span><span>Clerk Auth</span><span>Gemini API</span><span>TailwindCSS</span>
+        </div>
+        <!-- <div class="plinks"><a href="REPO_URL">Code</a><a href="DEMO_URL">Live demo</a></div> -->
+      </div>
+    </article>
+
+    <article class="entry" id="wed">
+      <div class="entry-when">2024</div>
+      <div>
+        <h3>Wed</h3>
+        <p class="role" data-fr="Application de partage de listes de souhaits">Wishlist sharing app</p>
+        <p data-fr="Refactorisée d'un monolithe vers des microservices : un service FastAPI qui scrape les données produit Amazon avec selectorlib, et un service Next.js pour le frontend, l'authentification et la logique métier — chacun avec son propre pipeline de déploiement.">Refactored from a monolith into microservices: a FastAPI service that scrapes Amazon product data with selectorlib, and a Next.js service handling the frontend, authentication and core logic — each with its own independent deployment pipeline.</p>
+        <div class="tokens">
+          <span>Next.js</span><span>FastAPI</span><span>React</span><span>Prisma</span><span>PostgreSQL</span><span>selectorlib</span>
+        </div>
+        <div class="plinks"><a href="https://github.com/defk0n1/wed-backend" data-fr="Code backend">Backend code</a></div>
+      </div>
+    </article>
+
+    <article class="entry" id="trainer">
+      <div class="entry-when">2024 — 25</div>
+      <div>
+        <h3>Personal Trainer Platform</h3>
+        <p data-fr="Une plateforme full-stack pour un coach sportif : les clients créent un profil, suivent des programmes d'entraînement et des plans alimentaires personnalisés, et suivent leur progression. Dockerisée, avec un pipeline CI/CD GitHub Actions qui déploie automatiquement sur Render et MongoDB Atlas.">A full-stack platform for a personal trainer: clients create profiles, follow personalised workout and diet plans, and track their progress. Dockerised, with a GitHub Actions CI/CD pipeline deploying automatically to Render and MongoDB Atlas.</p>
+        <div class="tokens">
+          <span>React</span><span>Node.js</span><span>Express</span><span>MongoDB</span><span>Redux Toolkit</span><span>Docker</span><span>GitHub Actions</span>
+        </div>
+        <div class="plinks"><a href="https://github.com/defk0n1/personal-trainer">Code</a></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ══ SKILLS ════════════════════════════════════════════════════════ -->
+<section id="skills">
+  <div class="sec-head">
+    <h2>Technologies</h2>
+  </div>
+
+  <dl style="margin:0">
+    <div class="skill">
+      <dt data-fr="Langages">Languages</dt>
+      <dd><span>Python</span><span>JavaScript</span><span>TypeScript</span><span>C++</span><span>PHP</span></dd>
+    </div>
+    <div class="skill">
+      <dt data-fr="ML &amp; IA">ML &amp; AI</dt>
+      <dd><span>PyTorch</span><span>PyTorch Geometric</span><span>Transformers</span><span>scikit-learn</span><span>XGBoost</span><span>LangChain</span><span>CrewAI</span><span>Unsloth</span><span>NumPy</span><span>Pandas</span></dd>
+    </div>
+    <div class="skill">
+      <dt data-fr="Données">Data</dt>
+      <dd><span>PostgreSQL</span><span>MongoDB</span><span>SQLite</span><span>Neo4j</span><span>Qdrant</span><span>Elasticsearch</span><span>SQLite</span><span>Firebase</span></dd>
+    </div>
+    <div class="skill">
+      <dt data-fr="Web">Web</dt>
+      <dd><span>React</span><span>Next.js</span><span>Vue</span><span>Node.js</span><span>Express</span><span>FastAPI</span><span>Flask</span><span>Laravel</span><span>TailwindCSS</span></dd>
+    </div>
+    <div class="skill">
+      <dt data-fr="Infrastructure">Infrastructure</dt>
+      <dd><span>Docker</span><span>Kubernetes</span><span>GitHub Actions</span><span>Azure</span><span>AWS</span><span>MQTT</span><span>Node-RED</span></dd>
+    </div>
+  </dl>
+</section>
+
+<!-- ══ EDUCATION ═════════════════════════════════════════════════════ -->
+<section id="education">
+  <div class="sec-head">
+    <h2 data-fr="Formation &amp; distinctions">Education &amp; distinctions</h2>
+  </div>
+
+  <article class="entry">
+    <div class="entry-when">
+      <span data-fr="2023 — Déc. 2026">2023 — Dec 2026</span>
+      <span class="entry-where" data-fr="Tunis, Tunisie">Tunis, Tunisia</span>
+    </div>
+    <div>
+      <h3>SUP'COM</h3>
+      <p class="role" data-fr="Diplôme d’ingénieur en TIC · Option AIM (Applications de l’Information Multimodale)">Engineering degree in ICT · AIM track (Applications of Multimodal Information)</p>
+      <p data-fr="Matières principales : algorithmique et structures de données, probabilités et statistiques, systèmes de télécommunications, traitement du signal numérique, réseaux et protocoles de communication, vision par ordinateur, machine learning, indexation et recherche dans des bases multimodales massives.">Coursework: algorithms and data structures, probability and statistics, telecommunication systems, digital signal processing, networks and communication protocols, computer vision, machine learning, indexing and retrieval over large multimodal databases.</p>
+    </div>
+  </article>
+
+  <article class="entry">
+    <div class="entry-when">
+      2021 — 2023
+      <span class="entry-where" data-fr="Nabeul / El Manar">Nabeul / El Manar</span>
+    </div>
+    <div>
+      <h3>IPEIN / IPEIEM</h3>
+      <p class="role" data-fr="Classes préparatoires · Mathématiques et physique">Preparatory classes · Mathematics and physics</p>
+      <p data-fr="Classé 93e au concours national d'entrée aux écoles d'ingénieurs. Matières principales : algèbre linéaire, analyse et probabilités, physique, chimie, programmation orientée objet.">Ranked 93rd nationally in the engineering entrance exam. Coursework: linear algebra, calculus and probability, physics, chemistry, object-oriented programming.</p>
+    </div>
+  </article>
+
+  <article class="entry">
+    <div class="entry-when">2024 — 2025</div>
+    <div>
+      <h3>Sup'Com Junior Entreprise</h3>
+      <p class="role" data-fr="Responsable du département Projets">Head of Projects department</p>
+      <p data-fr="Pilotage de projets clients de bout en bout, mentorat de développeurs juniors, animation d'ateliers sur les technologies web et le déroulement de projet, coordination d'équipes en méthodes agiles.">Ran client projects end to end, mentored junior developers, led workshops on web technologies and project workflow, and coordinated teams with agile methods.</p>
+    </div>
+  </article>
+
+  <article class="entry">
+    <div class="entry-when">Hackathons</div>
+    <div>
+      <ul>
+        <li data-fr="<strong>Sofrecom AI Agent Hackathon</strong> — 1re place. MailMate, un assistant email multi-agent, développé en équipe de six."><strong>Sofrecom AI Agent Hackathon</strong> — 1st place. MailMate, a multi-agent email assistant, built with a team of six.</li>
+        <li data-fr="<strong>Wiempower 2.0</strong> (IEEE Sup'Com SB) — 2e place. Un système IoT de supervision et de prédiction d'irrigation, du capteur à la commande de pompe par ML."><strong>Wiempower 2.0</strong> (IEEE Sup'Com SB) — 2nd place. An IoT irrigation monitoring and prediction system, from sensor gateway to ML pump control.</li>
+        <li data-fr="<strong>AI ANATOMY</strong> (GDC Sup'Com) — 4e place au challenge Kaggle. Llama 3.1 8B fine-tuné pour répondre à des cas cliniques exigeant un vrai jugement professionnel."><strong>AI ANATOMY</strong> (GDC Sup'Com) — 4th in the Kaggle challenge. Fine-tuned Llama 3.1 8B to answer clinical case descriptions that need real professional judgement.</li>
+        <li data-fr="<strong>IndabaX Tunisia 2025</strong> (IEEE Sup'Com SB) — 20e sur 133. Modèle XGBoost de détection d'anomalies sur les indicateurs de performance de cellules télécom."><strong>IndabaX Tunisia 2025</strong> (IEEE Sup'Com SB) — 20th of 133. XGBoost model for anomaly detection in telecom cell performance indicators.</li>
+        <li data-fr="<strong>GO DATA SCIENCE 4.0</strong> (IEEE ENSI SB) — 98e sur 194."><strong>GO DATA SCIENCE 4.0</strong> (IEEE ENSI SB) — 98th of 194.</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="entry">
+    <div class="entry-when" data-fr="Langues">Languages</div>
+    <div>
+      <div class="tokens">
+        <span data-fr="Arabe — langue maternelle">Arabic — native</span><span data-fr="Français — bilingue">French — bilingual</span><span data-fr="Anglais — C2, TOEIC 970">English — C2, TOEIC 970</span>
+      </div>
+    </div>
+  </article>
+</section>
+
+<!-- ══ FOOTER ════════════════════════════════════════════════════════ -->
+<footer>
+  <p class="foot-line" data-fr="À la recherche d’un poste en IA appliquée à partir de janvier 2027.<br>
+    <a href=&quot;mailto:ghassen.zriga@supcom.tn&quot;>Écrivez-moi →</a>">
+    Looking for a role in applied AI from January 2027.<br>
+    <a href="mailto:ghassen.zriga@supcom.tn">Say hello →</a>
+  </p>
+  <div class="foot-meta">
+    <a href="mailto:ghassen.zriga@supcom.tn">ghassen.zriga@supcom.tn</a>
+    <a href="tel:+33751343980">+33 7 51 34 39 80</a>
+    <a href="https://www.linkedin.com/in/ghassen-zriga/">LinkedIn</a>
+    <a href="https://github.com/defk0n1">GitHub</a>
+    <span>Lens, France</span>
+  </div>
+</footer>
+
+</div>
+<script>
+(function () {
+  var nodes = Array.prototype.slice.call(document.querySelectorAll('[data-fr]'));
+  var buttons = Array.prototype.slice.call(document.querySelectorAll('.langbar button'));
+  var titles = {
+    en: "Ghassen Zriga — AI & ML Engineer",
+    fr: "Ghassen Zriga — Ingénieur IA & ML"
+  };
+  var descs = {
+    en: document.querySelector('meta[name=description]').content,
+    fr: "Ghassen Zriga — élève-ingénieur en dernière année à SUP'COM, stagiaire de recherche au CRIL (Université d'Artois). Systèmes LLM, apprentissage par renforcement et ingénierie full-stack."
+  };
+
+  // capture the English source before anything is swapped
+  nodes.forEach(function (n) { n.setAttribute('data-en', n.innerHTML); });
+
+  function apply(lang) {
+    nodes.forEach(function (n) {
+      var v = n.getAttribute('data-' + lang);
+      if (v !== null) n.innerHTML = v;
+    });
+    document.documentElement.lang = lang;
+    document.title = titles[lang];
+    document.querySelector('meta[name=description]').content = descs[lang];
+    buttons.forEach(function (b) {
+      var on = b.getAttribute('data-lang') === lang;
+      b.classList.toggle('on', on);
+      b.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
+    try {
+      history.replaceState(null, '', lang === 'fr' ? '?lang=fr' : location.pathname);
+    } catch (e) {}
+  }
+
+  buttons.forEach(function (b) {
+    b.addEventListener('click', function () { apply(b.getAttribute('data-lang')); });
+  });
+
+  var q = (location.search.match(/[?&]lang=(en|fr)/) || [])[1];
+  var guess = (navigator.language || 'en').toLowerCase().indexOf('fr') === 0 ? 'fr' : 'en';
+  apply(q || guess);
+})();
+</script>
+</body>
+</html>
